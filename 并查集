@@ -1,0 +1,50 @@
+#define INF 0x3f3f3f
+const int maxnum = 1000;
+int par[maxnum];
+int height[maxnum];
+
+//初始化
+void init(int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		par[i] = i;
+		height[i] = 0;
+	}
+}
+
+//寻找父亲，并统一一个父亲
+int find(int x)
+{
+	if (par[x] == x)
+		return x;
+	else
+	{
+		return par[x] = find(par[x]);
+	}
+}
+
+//合并
+void unite(int x, int y)
+{
+	x = find(x);
+	y = find(y);
+	if (x == y)
+		return;
+	if (height[x] < height[y])
+	{
+		par[x] = y;
+	}
+	else
+	{
+		par[y] = x;
+		if (height[x] == height[y])
+			height[x]++;
+	}
+}
+
+//判断两个点是不是在同一个集合里面
+bool same(int x, int y)
+{
+	return find(x) == find(y);
+}
