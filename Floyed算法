@@ -1,0 +1,17 @@
+//根据题意确定递归关系
+int d[maxnum][maxnum];
+int vnum;
+int edgenum;
+void warshall_floyd()
+{
+	for (int k = 1; k <= vnum; k++)
+	{
+		for (int i = 1; i <= vnum; i++)
+		{
+			for (int j = 1; j <= vnum; j++)
+			{
+				d[i][j] = max(d[i][j], min(d[i][k] , d[k][j]));
+			}
+		}
+	}
+}
