@@ -1,4 +1,4 @@
-#define INF 0x3f3f3f
+#define INF 0x3f3f3f3f
 const int maxnum = 1001;
 const int maxedgenum = 25005;
 int par[maxnum];
