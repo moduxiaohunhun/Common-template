@@ -1,7 +1,7 @@
 typedef vector<int> vec;
 typedef vector<vec> mat;
 typedef long long ll;
- const long long int maxnum=10000007;
+ const long long int maxnum=0x3f3f3f3f;
  //计算矩阵A*矩阵B
  mat mul(mat &A, mat &B)
  {
