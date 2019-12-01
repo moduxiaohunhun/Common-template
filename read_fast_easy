@@ -1,0 +1,8 @@
+static char buf[100000],*a=buf,*d=buf;
+#define gc a==d&&(d=(a=buf)+fread(buf,1,100000,stdin),a==d)?EOF:*a++
+inline int read(){
+    register int x(0);register char c(gc);
+    while(c>'9'||c<'0')c=gc;
+    while(c<='9'&&c>='0')x=(x<<1)+(x<<3)+(c^48),c=gc;
+    return x;
+}
